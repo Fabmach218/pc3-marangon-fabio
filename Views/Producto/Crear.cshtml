@@ -1,0 +1,61 @@
+@model Producto
+
+@{
+    ViewData["Title"] = "Formulario de producto";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.items;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+
+    <div class="form-group row">
+        <label asp-for="Nombre"></label>
+        <input class="form-control" asp-for="Nombre" />
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="ImgUrl"></label>
+        <input class="form-control" asp-for="ImgUrl" placeholder="Ingrese la URL de la imagen"/>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Desc"></label>
+        <textarea class="form-control" asp-for="Desc" cols="20" rows="10"></textarea>
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Precio"></label>
+        <input class="form-control" asp-for="Precio" />
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="Celular"></label>
+        <input class="form-control" asp-for="Celular" />
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="LugarCompra"></label>
+        <input class="form-control" asp-for="LugarCompra" />
+    </div>
+
+    <div class="form-group row">
+        <label asp-for="NombreComprador"></label>
+        <input class="form-control" asp-for="NombreComprador" />
+    </div>
+
+    <div class="form-group row">
+        
+        <label asp-for="Categoria"></label>
+        
+        <div class="col-md-12">
+            @Html.DropDownList("categoriaId" , items , "- Seleccione una categoría -", new {@class="form-control"})
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <button class="btn btn-primary">Crear producto</button>
+    </div>
+
+</form>
