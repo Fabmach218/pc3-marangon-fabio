@@ -12,5 +12,9 @@ namespace pc3_marangon_fabio.Data
             : base(options)
         {
         }
+
+        public DbSet<pc3_marangon_fabio.Models.Producto> DataProductos { get; set; }
+        public DbSet<pc3_marangon_fabio.Models.Categoria> DataCategorias { get; set; }
+
     }
 }
