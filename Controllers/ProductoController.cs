@@ -28,7 +28,7 @@ namespace pc3_marangon_fabio.Controllers
             var fechaActual = DateTime.Now;
             var dia = fechaActual.DayOfYear - 5;
             
-            var productos = _context.DataProductos.Include(c => c.Categoria).Where(p => p.Fecha.DayOfYear >= dia);
+            var productos = _context.DataProductos.Include(c => c.Categoria).Where(p => p.Fecha.DayOfYear >= dia).ToList();
             return View(productos);
         }
 
